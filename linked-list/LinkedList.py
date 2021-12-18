@@ -12,7 +12,11 @@ class LinkedList:
         node = self.head
         while(node):
             print(node.data)
-            node = node.next    
+            node = node.next 
+
+    def push(self, node):
+        node.next = self.head
+        self.head = node   
 
 if __name__=="__main__":
     list = LinkedList()
@@ -23,5 +27,9 @@ if __name__=="__main__":
     list.head = node1
     node1.next = node2
     node2.next = node3
+
+    node4 = Node(4)
+
+    list.push(node4)
 
     list.printList()

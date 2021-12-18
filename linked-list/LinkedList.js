@@ -11,6 +11,11 @@ class LinkedList {
             node = node.next;
         }
     }
+
+    push(node) {
+        node.next = this.head;
+        this.head = node;
+    }
 }
 
 class Node {
@@ -29,6 +34,9 @@ function main() {
     list.head = node1;
     node1.next = node2;
     node2.next = node3;
+
+    const node4 = new Node(4);
+    list.push(node4)
 
     list.printList();
 }
